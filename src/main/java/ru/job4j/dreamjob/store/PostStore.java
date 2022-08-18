@@ -21,6 +21,14 @@ public class PostStore {
         return posts.put(post.getId(), post);
     }
 
+    public Post findById(int id) {
+        return posts.get(id);
+    }
+
+    public Post update(Post post) {
+        return posts.put(post.getId(), post);
+    }
+
     public static PostStore instOf() {
         return INST;
     }
