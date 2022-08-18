@@ -17,6 +17,10 @@ public class PostStore {
         posts.put(3, new Post(3, "Senior Java Job"));
     }
 
+    public Post add(Post post) {
+        return posts.put(post.getId(), post);
+    }
+
     public static PostStore instOf() {
         return INST;
     }
