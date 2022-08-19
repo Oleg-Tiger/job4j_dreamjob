@@ -29,7 +29,7 @@ public class PostStore {
     }
 
     public Post update(Post post) {
-        return posts.put(post.getId(), post);
+        return posts.replace(post.getId(), post);
     }
 
     public static PostStore instOf() {
