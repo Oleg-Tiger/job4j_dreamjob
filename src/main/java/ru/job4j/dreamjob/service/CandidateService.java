@@ -1,17 +1,17 @@
 package ru.job4j.dreamjob.service;
 
+import org.springframework.stereotype.Service;
 import ru.job4j.dreamjob.model.Candidate;
 import ru.job4j.dreamjob.store.CandidateStore;
-
 import java.util.Collection;
 
+@Service
 public class CandidateService {
 
-    private static final CandidateService INST = new CandidateService();
     private final CandidateStore store;
 
-    private CandidateService() {
-        store = CandidateStore.instOf();
+    public CandidateService(CandidateStore store) {
+        this.store = store;
     }
 
     public Candidate add(Candidate candidate) {
@@ -28,9 +28,5 @@ public class CandidateService {
 
     public Collection<Candidate> findAll() {
         return store.findAll();
-    }
-
-    public static CandidateService instOf() {
-        return INST;
     }
 }
