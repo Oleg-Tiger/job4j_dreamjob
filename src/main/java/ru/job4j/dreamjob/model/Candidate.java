@@ -8,6 +8,7 @@ public class Candidate {
     private String name;
     private String description;
     private boolean visible;
+    private City city;
     private final LocalDateTime created = LocalDateTime.now();
 
     public Candidate() { }

@@ -9,15 +9,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import ru.job4j.dreamjob.model.Candidate;
 import ru.job4j.dreamjob.service.CandidateService;
 import net.jcip.annotations.ThreadSafe;
+import ru.job4j.dreamjob.service.CityService;
 
 @ThreadSafe
 @Controller
 public class CandidateController {
 
     private final CandidateService candidateService;
+    private final CityService cityService;
 
-    public CandidateController(CandidateService candidateService) {
+    public CandidateController(CandidateService candidateService, CityService cityService) {
         this.candidateService = candidateService;
+        this.cityService = cityService;
     }
 
     @GetMapping("/candidates")
@@ -29,6 +32,7 @@ public class CandidateController {
     @GetMapping("/formAddCandidate")
     public String addCandidate(Model model) {
         model.addAttribute("candidate", new Candidate(0, "Заполните поле"));
+        model.addAttribute("cities", cityService.getAllCities());
         return "addCandidate";
     }
 
@@ -47,6 +51,7 @@ public class CandidateController {
     @GetMapping("/formUpdateCandidate/{candidateId}")
     public String formUpdateCandidate(Model model, @PathVariable("candidateId") int id) {
         model.addAttribute("candidate", candidateService.findById(id));
+        model.addAttribute("cities", cityService.getAllCities());
         return "updateCandidate";
     }
 }
