@@ -10,6 +10,7 @@ public class Candidate {
     private boolean visible;
     private City city;
     private final LocalDateTime created = LocalDateTime.now();
+    private byte[] photo;
 
     public Candidate() { }
 
@@ -68,6 +69,14 @@ public class Candidate {
         this.city = city;
     }
 
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -84,5 +93,4 @@ public class Candidate {
     public int hashCode() {
         return Objects.hash(id);
     }
-
 }
