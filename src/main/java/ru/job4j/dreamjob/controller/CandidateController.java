@@ -38,12 +38,16 @@ public class CandidateController {
 
     @PostMapping("/updateCandidate")
     public String updateCandidate(@ModelAttribute Candidate candidate) {
+        int id = candidate.getCity().getId();
+        candidate.setCity(cityService.findById(id));
         candidateService.update(candidate);
         return "redirect:/candidates";
     }
 
     @PostMapping("/createCandidate")
     public String createCandidate(@ModelAttribute Candidate candidate) {
+        int id = candidate.getCity().getId();
+        candidate.setCity(cityService.findById(id));
         candidateService.add(candidate);
         return "redirect:/candidates";
     }
