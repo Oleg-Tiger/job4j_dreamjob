@@ -30,8 +30,9 @@ public class PostStore {
         return posts.get(id);
     }
 
-    public Post update(Post post) {
-        return posts.replace(post.getId(), post);
+    public boolean update(Post post) {
+        posts.replace(post.getId(), post);
+        return true;
     }
 
     public Collection<Post> findAll() {

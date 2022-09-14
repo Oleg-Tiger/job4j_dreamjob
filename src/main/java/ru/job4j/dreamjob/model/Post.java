@@ -9,7 +9,7 @@ public class Post {
     private String description;
     private boolean visible;
     private City city;
-    private final LocalDateTime created = LocalDateTime.now();
+    private LocalDateTime created = LocalDateTime.now();
 
     public Post() { }
 
@@ -50,6 +50,10 @@ public class Post {
 
     public LocalDateTime getCreated() {
         return created;
+    }
+
+    public void setCreated(LocalDateTime created) {
+       this.created = created;
     }
 
     public boolean isVisible() {
