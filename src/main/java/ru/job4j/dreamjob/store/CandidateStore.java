@@ -30,8 +30,9 @@ public class CandidateStore {
         return candidates.get(id);
     }
 
-    public Candidate update(Candidate candidate) {
-        return candidates.replace(candidate.getId(), candidate);
+    public boolean update(Candidate candidate) {
+        candidates.replace(candidate.getId(), candidate);
+        return true;
     }
 
     public Collection<Candidate> findAll() {

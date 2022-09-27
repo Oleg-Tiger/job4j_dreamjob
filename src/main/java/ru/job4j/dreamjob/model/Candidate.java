@@ -9,7 +9,7 @@ public class Candidate {
     private String description;
     private boolean visible;
     private City city;
-    private final LocalDateTime created = LocalDateTime.now();
+    private LocalDateTime created = LocalDateTime.now();
     private byte[] photo;
 
     public Candidate() { }
@@ -59,6 +59,10 @@ public class Candidate {
 
     public LocalDateTime getCreated() {
         return created;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
     }
 
     public City getCity() {

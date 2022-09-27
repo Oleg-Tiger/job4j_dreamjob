@@ -50,14 +50,15 @@
                         <input type="file" class="form-control" name="file" id="file">
                     </div>
                     <form th:action="@{/createCandidate}" method="POST">
-                        <input type="hidden" name="id" value="0"/>
                         <div class="form-group">
-                        <label>Описание
-                            <br>
-                            <textarea rows="15" cols="140"></textarea>
-                            <br/>
-                        </label>
-                    </div>
+                            <label for="description">Описание
+                                <br>
+                                <textarea rows="15" cols="140" name="description" id="description"></textarea>
+                                <br/>
+                            </label>
+                        </div>
+                        <form th:action="@{/createCandidate}" method="POST">
+                            <input type="hidden" name="id" value="0"/>
                         <div class="form-group">
                             <label for="city.id">Город</label>
                             <select class="form-control" id="city.id" name="city.id">

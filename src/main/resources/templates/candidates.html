@@ -25,6 +25,9 @@
                 <th scope="col">#</th>
                 <th scope="col">Фото</th>
                 <th scope="col">Имя</th>
+                <th scope="col">Описание</th>
+                <th scope="col">Город</th>
+                <th scope="col">Дата создания</th>
             </tr>
             </thead>
             <tbody>
@@ -44,6 +47,18 @@
                     <span th:if="${!candidate.visible}">
             <i class="fa fa-square-o"></i>
         </span>
+                </td>
+                <td>
+                    <details>
+                        <summary>Показать</summary>
+                        <span th:text="${candidate.description}"></span>
+                    </details>
+                </td>
+                <td>
+                    <span th:text="${candidate.city.name}"></span>
+                </td>
+                <td>
+                    <span th:text="${candidate.created.toLocalDate}"></span>
                 </td>
             </tr>
             </tbody>
