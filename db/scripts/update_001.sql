@@ -16,3 +16,10 @@ CREATE TABLE if not exists candidate (
    created timestamp,
    photo bytea
 );
+
+CREATE TABLE if not exists users (
+  id SERIAL PRIMARY KEY,
+  email varchar(100) unique,
+  password TEXT
+);
+
