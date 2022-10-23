@@ -3,7 +3,10 @@ package ru.job4j.dreamjob.utils;
 import ru.job4j.dreamjob.model.User;
 import javax.servlet.http.HttpSession;
 
-public class UserUtil {
+public final class UserUtil {
+
+    private UserUtil() {
+    }
 
     public static User getUserFromSession(HttpSession session) {
         User user = (User) session.getAttribute("user");
